@@ -13,13 +13,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114989078083753334}
-  - {fileID: 114738785293992336}
-  - {fileID: 114393492491715238}
+  - {fileID: 114608514264961786}
+  - {fileID: 114364063098989696}
   EditorEvents:
   - {fileID: 114242725231941718}
-  MasterBankRef: {fileID: 114393492491715238}
+  MasterBankRef: {fileID: 114364063098989696}
   StringsBankRef: {fileID: 114989078083753334}
-  stringsBankWriteTime: 636525993080000000
+  stringsBankWriteTime: 636526076222303918
   cacheVersion: 2
 --- !u!114 &114242725231941718
 MonoBehaviour:
@@ -35,7 +35,7 @@ MonoBehaviour:
   Path: event:/GameJam Demo the First
   guid: c098755173438546bfd08b7c5d93e93b
   Banks:
-  - {fileID: 114738785293992336}
+  - {fileID: 114608514264961786}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -43,6 +43,25 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 282666
+--- !u!114 &114364063098989696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\Agustin-HP\Documents\GitHub\GameJam\GameJam\Assets\Audio\FMOD\GameJam\Build\Desktop\Master
+    Bank.bank
+  lastModified: 636526076218519070
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 12474
+  Exists: 1
 --- !u!114 &114393492491715238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,6 +80,24 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 12474
+  Exists: 1
+--- !u!114 &114608514264961786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\Agustin-HP\Documents\GitHub\GameJam\GameJam\Assets\Audio\FMOD\GameJam\Build\Desktop\Music.bank
+  lastModified: 636526076268164553
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 3357504
   Exists: 1
 --- !u!114 &114738785293992336
 MonoBehaviour:
@@ -91,10 +128,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD/GameJam/Build/Desktop/Master Bank.strings.bank
-  lastModified: 636525993080000000
+  Path: Assets\Audio\FMOD\GameJam\Build\Desktop\Master Bank.strings.bank
+  lastModified: 636526076222303918
   LoadResult: 0
   FileSizes:
-  - Name: Desktop
+  - Name: 
     Value: 780
   Exists: 1

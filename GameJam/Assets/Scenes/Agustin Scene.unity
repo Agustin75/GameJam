@@ -495,7 +495,7 @@ GameObject:
   - component: {fileID: 971966093}
   - component: {fileID: 971966092}
   m_Layer: 5
-  m_Name: GameManager
+  m_Name: GamePlay Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -512,6 +512,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 166184ff72c8d3846a320eb8db4a779e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  answerButtons:
+  - {fileID: 1667486855}
+  - {fileID: 1683184543}
+  - {fileID: 1652653641}
+  scoreBar: {fileID: 1132926604}
 --- !u!224 &971966093
 RectTransform:
   m_ObjectHideFlags: 0
@@ -541,7 +546,7 @@ GameObject:
   - component: {fileID: 1132926605}
   - component: {fileID: 1132926604}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Score Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
