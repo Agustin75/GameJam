@@ -31,6 +31,14 @@ public class GamePlayManager : MonoBehaviour
 		requiredEmotion = (Utility.Emotions)Random.Range(0, System.Enum.GetValues(typeof(Utility.Emotions)).Length);
 		//numAnswers = answerButtons.Length;
 
+		numDays = PlayerPrefs.GetInt("NumDays");
+		maxScore = PlayerPrefs.GetInt("MaxScore");
+		requiredScore = PlayerPrefs.GetInt("RequiredScore");
+		numQuestions = PlayerPrefs.GetInt("NumQuestions" + currentDay);
+		numAnswers = PlayerPrefs.GetInt("NumAnswers" + currentDay);
+		correctScore = PlayerPrefs.GetInt("CorrectScore" + currentDay);
+		wrongScore = PlayerPrefs.GetInt("WrongScore" + currentDay);
+
 		// TODO: REMOVE DEBUG CODE
 		ShowQuestion(true);
 	}
