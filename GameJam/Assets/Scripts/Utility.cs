@@ -13,6 +13,10 @@ public class Utility : MonoBehaviour {
     {
         SceneManager.LoadScene(scene);
     }
+    public static void LoadSceneA(string scene)
+    {
+        SceneManager.LoadScene(scene);
+    }
 
     
 }

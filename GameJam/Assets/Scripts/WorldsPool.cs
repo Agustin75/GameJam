@@ -72,13 +72,14 @@ public class WorldsPool : MonoBehaviour {
 		{
 			temp[index] = GetRandomPhrase((Utility.Emotions)randEmotion);
 
-			if (!previousPhrase.Equals(temp[index]))
+			if (index == 0 || !(previousPhrase.GetAnswerPhrase().Equals(temp[index].GetAnswerPhrase())))
 			{
 				previousPhrase = temp[index];
 				index++;
 			}
 
-			randEmotion = Random.Range(0, System.Enum.GetValues(typeof(Utility.Emotions)).Length);
+			while (randEmotion == (int)feelingID)
+				randEmotion = Random.Range(0, System.Enum.GetValues(typeof(Utility.Emotions)).Length);
 		}
 
 		for (int i = 0; i < 5; i++)
