@@ -35,6 +35,10 @@ public class TextSpeed : MonoBehaviour {
 
         }
 
+        for (int i = 0; i < 3; i++)
+        {
+            yield return new WaitForSeconds(1f);
+        }
         Utility.LoadSceneA("Pablo Scene");
 
         
