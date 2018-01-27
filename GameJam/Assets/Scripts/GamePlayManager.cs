@@ -137,8 +137,7 @@ public class GamePlayManager : MonoBehaviour
 			answerButtons[i].gameObject.SetActive(show);
 			if (show)
 			{
-				answerTexts[i].text = answers[i].GetPhrase();
-				//answerTexts[i].text = answers[i].GetAnswerPhrase();
+				answerTexts[i].text = answers[i].GetAnswerPhrase();
 			}
 		}
 	}

@@ -442,104 +442,104 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HappyPhrases:
-  - shortVersion: 
+  - shortVersion: I will not sit idle!
     phrase: I will not sit idle in my administration. If I am elected, I will invest
       in bandwidth innovations to make it better, faster, and cheaper!
     feelingID: 0
-  - shortVersion: 
-    phrase: "Why should to sacrifice our children? I propose individual server farms
+  - shortVersion: Why make sacrifices?
+    phrase: "Why should we sacrifice our children? I propose individual server farms
       so we\u2019ll never have to delete our favorite games off of our devices ever
       again!"
     feelingID: 0
-  - shortVersion: 
+  - shortVersion: More bean bags!
     phrase: Under my administration, no one will ever go without a bean bag chair,
       no matter how many people show up for the LAN party.
     feelingID: 0
-  - shortVersion: 
+  - shortVersion: More loot space!
     phrase: I know we all suffer from insufficient space to store our loot. If I am
       elected, I will work toward extending our sale by two whole storage spaces!
     feelingID: 0
-  - shortVersion: 
+  - shortVersion: Lower taxes
     phrase: "By reallocating the city\u2019s funds, we can shave off 10% of our annual
       income tax. That\u2019s three whole games a year we can add to our collections."
     feelingID: 0
   AngryPhrases:
-  - shortVersion: 
+  - shortVersion: "There\u2019s no freedom!"
     phrase: "Our mayor promised us freedom by dice roll, but the truth is, there is
       no freedom! He wins every time, all because of the dungeon master\u2019s privilege
       he imposed on all of us!"
     feelingID: 1
-  - shortVersion: 
+  - shortVersion: What about his bonuses?
     phrase: "Today he proposes we settle it by dice roll, but tomorrow he\u2019ll
       be invoking his surplus roll rule and stacking his bonuses till no one can compete!
       (till he wins by default)"
     feelingID: 1
-  - shortVersion: 
+  - shortVersion: He never loses.
     phrase: He says that dice rolls are fair. How is it fair when his rolls never
       drop below 18!?
     feelingID: 1
-  - shortVersion: 
+  - shortVersion: Look at the records.
     phrase: "The Bandwidth Neutrality act was made to ensure that everyone who plays
       can compete fairly, and equally. But, look at the records! His speed is the
       only one who\u2019s stayed consistent during his entire administration. Him
       and his clans and Guilds."
     feelingID: 1
-  - shortVersion: 
-    phrase: There is no fairness in for all when, one person is getting custom made
-      loot made him using our taxes!
+  - shortVersion: He gets custom loot!
+    phrase: There is no fairness in for all when one person is getting custom made
+      loot made for him using our taxes!
     feelingID: 1
-  - shortVersion: 
+  - shortVersion: "He\u2019s hoarding our stuff!"
     phrase: "There\u2019s only 5 liquid cooled PCs left in the world, they belong
       to the public! To whoever can afford to buy them. But, he\u2019s laid claim
       to all of them in the posterity and redundant backups for his personal collection."
     feelingID: 1
   SadPhrases:
-  - shortVersion: 
+  - shortVersion: Remember Arneson.
     phrase: "Today, I\u2019d like to take some time to remember the late Steve Arneson,
       the clone who spent his life rediscovering his progenitors D&D legacy."
     feelingID: 2
-  - shortVersion: 
+  - shortVersion: Our saves are gone.
     phrase: Today, the entire nations suffers. With this tragic loss of data, all
       of our cloud saves have been lost.
     feelingID: 2
-  - shortVersion: 
+  - shortVersion: The backups failed.
     phrase: After the earthquake, some of the backup servers failed to start up. The
       result, is the loss of our favorite pizza recipes and slurpee flavors.
     feelingID: 2
-  - shortVersion: 
+  - shortVersion: Soda shortage.
     phrase: We are all affected by this tragic chain of events. Without Dripsi soda
       company, there will be no more Mountain Slew to keep raids running at night.
     feelingID: 2
-  - shortVersion: 
+  - shortVersion: "Disney\u2019s at it again."
     phrase: On this day, we all reel from the news that Disney has acquired the last
       of the holdout companies, and that all continuities are going to be rebooted,
       and reorganized.
     feelingID: 2
   FearPhrases:
-  - shortVersion: 
+  - shortVersion: What about our pylons?
     phrase: "He says you can trust him, but what recourse will you have when he loses
       his temper and invokes the Blue Shell protocol? Who\u2019s going to protect
       your energy pylons then?"
     feelingID: 3
-  - shortVersion: 
+  - shortVersion: Think of the canons!
     phrase: How many times will he use a presidential order to alter the official
       Star Wars canon? Or Harry Potter? How long until Solo is the only one shooting,
       or the Ewoks are being gunned before the end of Return of the Jedi?
     feelingID: 3
-  - shortVersion: 
+  - shortVersion: "What is \u201Cgood taste\u201D?"
     phrase: "Throughout his career, he\u2019s made countless decisions to axe or modify
       series in the name of \u2018Good taste.\u2019 What is \u2018good taste\u2019
       and how far will it let him go? How long before he\u2019s micromanaging your
       canons in the name of \u2018good taste\u2019?"
     feelingID: 3
-  - shortVersion: 
+  - shortVersion: "He\u2019s a voyeur!"
     phrase: "How many of you have felt eyes on you while you\u2019re at your most
       vulnerable? He may have passed laws protecting us from voyeurism, but he also
       quietly installed a clause that allows him to discreetly access your webcams
       without permission, and without putting it on record. How safe are you in your
       own home?"
     feelingID: 3
-  - shortVersion: 
+  - shortVersion: Axing our favorites.
     phrase: "He put the axe to Call of Honor before the alpha was even released to
       the public, \u201Cbecause it sucked,\u201D and told them to start from scratch.
       How long will we have to wait for that!?"
@@ -736,7 +736,6 @@ MonoBehaviour:
   playerSpeech: {fileID: 266980148}
   scoreBar: {fileID: 1132926604}
   requiredEmotionImage: {fileID: 1174495710}
-  waitTime: 1
 --- !u!4 &971966093
 Transform:
   m_ObjectHideFlags: 0
