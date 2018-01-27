@@ -44,7 +44,13 @@ public class FaceGenerator : MonoBehaviour {
         firstnames = tfn.text.Split('\n');
         TextAsset tln = Resources.Load<TextAsset>("surnames");
         surnames = tln.text.Split('\n');
-        name.text = firstnames[Random.Range(0,firstnames.Length)] + " " +surnames[Random.Range(0, surnames.Length)];
+        Generatefaceandname();
+    }
+
+
+    void Generatefaceandname()
+    {
+        name.text = firstnames[Random.Range(0, firstnames.Length)] + " " + surnames[Random.Range(0, surnames.Length)];
 
         //set hair
         hair.sprite = HairPool[Random.Range(0, HairPool.Length)];
@@ -61,8 +67,16 @@ public class FaceGenerator : MonoBehaviour {
         //set nose
         Nose.sprite = NosePool[Random.Range(0, NosePool.Length)];
         // set stache
-        stache.sprite = StachePool[Random.Range(0,StachePool.Length)];
+        stache.sprite = StachePool[Random.Range(0, StachePool.Length)];
         //set mouth
         mouth.sprite = MouthPool[Random.Range(0, MouthPool.Length)];
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            Generatefaceandname();
+        }
     }
 }
