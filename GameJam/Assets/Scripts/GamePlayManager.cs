@@ -12,28 +12,25 @@ public class GamePlayManager : MonoBehaviour
 	public Button[] answerButtons;
 	public Text[] answerTexts;
 	public Text currentDayText;
+	public Text playerSpeech;
 	public Image scoreBar;
 	public Image requiredEmotionImage;
-	public int requiredScore, maxScore;
 
 	// Private Members
-	// TODO: Change back to private (public for Debug)
-	public int currentScore, correctScore, wrongScore;
-	public int numAnswers;
-	public int numQuestions, currQuestion;
+	private int requiredScore, maxScore;
+	private int currentScore, correctScore, wrongScore;
+	private int numAnswers;
+	private int numQuestions, currQuestion;
+	private int currentDay;
 	private Utility.Emotions requiredEmotion;
 	private Phrase[] answers;
-	public int numDays;
-	public float waitTime;
-
-	private int currentDay;
+	private int numDays;
 	private bool playerAnswered;
-	private float timer;
 
 	// Use this for initialization
 	void Start()
 	{
-		timer = 0.0f;
+		//timer = 0.0f;
 		playerAnswered = false;
 		currentScore = currQuestion = currentDay = 0;
 		requiredEmotion = (Utility.Emotions)Random.Range(0, System.Enum.GetValues(typeof(Utility.Emotions)).Length);
@@ -63,7 +60,6 @@ public class GamePlayManager : MonoBehaviour
 				break;
 		}
 
-		// TODO: REMOVE DEBUG CODE
 		ShowQuestion(true);
 	}
 
@@ -123,12 +119,11 @@ public class GamePlayManager : MonoBehaviour
 	{
 		if (playerAnswered)
 		{
-			timer += Time.deltaTime;
-			if (timer >= waitTime)
+			if(Input.GetMouseButtonDown(0))
 			{
-				timer = 0.0f;
 				playerAnswered = false;
 				NextQuestion();
+				playerSpeech.gameObject.SetActive(false);
 			}
 		}
 	}
@@ -141,7 +136,10 @@ public class GamePlayManager : MonoBehaviour
 		{
 			answerButtons[i].gameObject.SetActive(show);
 			if (show)
+			{
 				answerTexts[i].text = answers[i].GetPhrase();
+				//answerTexts[i].text = answers[i].GetAnswerPhrase();
+			}
 		}
 	}
 
@@ -169,9 +167,10 @@ public class GamePlayManager : MonoBehaviour
 
 		playerAnswered = true;
 
+		playerSpeech.text = answers[answer].GetPhrase();
+		playerSpeech.gameObject.SetActive(true);
+
 		ShowQuestion(false);
-		// TODO: REMOVE DEBUG CODE
-		//NextQuestion();
 	}
 
 	// Function that handles moving on to the next question. Call after showing audience feedback

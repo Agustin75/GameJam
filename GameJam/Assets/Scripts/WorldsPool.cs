@@ -148,11 +148,17 @@ public class WorldsPool : MonoBehaviour {
 public struct Phrase
 {
     [SerializeField]
-    string phrase;
-    [SerializeField]
+    string shortVersion;
+	[SerializeField]
+	string phrase;
+	[SerializeField]
     Utility.Emotions feelingID;
 
-    public string GetPhrase()
+	public string GetAnswerPhrase()
+	{
+		return shortVersion;
+	}
+	public string GetPhrase()
     {
         return phrase;
     }
