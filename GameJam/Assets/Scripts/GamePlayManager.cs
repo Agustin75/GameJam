@@ -11,7 +11,9 @@ public class GamePlayManager : MonoBehaviour
 	// Public Members
 	public Button[] answerButtons;
 	public Text[] answerTexts;
+	public Text currentDayText;
 	public Image scoreBar;
+	public Image requiredEmotionImage;
 	public int requiredScore, maxScore;
 
 	// Private Members
@@ -22,14 +24,19 @@ public class GamePlayManager : MonoBehaviour
 	private Utility.Emotions requiredEmotion;
 	private Phrase[] answers;
 	public int numDays;
+	public float waitTime;
 
 	private int currentDay;
+	private bool playerAnswered;
+	private float timer;
+
 	// Use this for initialization
 	void Start()
 	{
+		timer = 0.0f;
+		playerAnswered = false;
 		currentScore = currQuestion = currentDay = 0;
 		requiredEmotion = (Utility.Emotions)Random.Range(0, System.Enum.GetValues(typeof(Utility.Emotions)).Length);
-		//numAnswers = answerButtons.Length;
 
 		numDays = PlayerPrefs.GetInt("NumDays");
 		maxScore = PlayerPrefs.GetInt("MaxScore");
@@ -39,26 +46,91 @@ public class GamePlayManager : MonoBehaviour
 		correctScore = PlayerPrefs.GetInt("CorrectScore" + currentDay);
 		wrongScore = PlayerPrefs.GetInt("WrongScore" + currentDay);
 
+		currentDayText.text = "Day " + (currentDay + 1).ToString();
+		switch (requiredEmotion)
+		{
+			case Utility.Emotions.Happiness:
+				requiredEmotionImage.color = Color.yellow;
+				break;
+			case Utility.Emotions.Anger:
+				requiredEmotionImage.color = Color.red;
+				break;
+			case Utility.Emotions.Sadness:
+				requiredEmotionImage.color = Color.blue;
+				break;
+			case Utility.Emotions.Fear:
+				requiredEmotionImage.color = Color.black;
+				break;
+		}
+
 		// TODO: REMOVE DEBUG CODE
 		ShowQuestion(true);
 	}
 
-	public void NewDay(int _requiredScore, int _correctScore, int _wrongScore, int _numQuestions, int _numAnswers = 3)
+	public bool NewDay()
 	{
+		playerAnswered = false;
 		currentDay++;
 		currQuestion = 0;
-		numQuestions = _numQuestions;
-		numAnswers = _numAnswers;
-		requiredScore = _requiredScore;
+
+		if (currentDay == numDays)
+		{
+			if (currentScore >= requiredScore)
+			{
+				// Game Won
+				Debug.Log("Win");
+				ShowQuestion(false);
+				return false;
+			}
+			else
+			{
+				// Game Lost
+				Debug.Log("Loss");
+				ShowQuestion(false);
+				return false;
+			}
+		}
+
+		currentDayText.text = "Day " + (currentDay + 1).ToString();
+
+		numQuestions = PlayerPrefs.GetInt("NumQuestions" + currentDay);
+		numAnswers = PlayerPrefs.GetInt("NumAnswers" + currentDay);
 		requiredEmotion = (Utility.Emotions)Random.Range(0, System.Enum.GetValues(typeof(Utility.Emotions)).Length);
-		correctScore = _correctScore;
-		wrongScore = _wrongScore;
+		correctScore = PlayerPrefs.GetInt("CorrectScore" + currentDay);
+		wrongScore = PlayerPrefs.GetInt("WrongScore" + currentDay);
+
+		switch (requiredEmotion)
+		{
+			case Utility.Emotions.Happiness:
+				requiredEmotionImage.color = Color.yellow;
+				break;
+			case Utility.Emotions.Anger:
+				requiredEmotionImage.color = Color.red;
+				break;
+			case Utility.Emotions.Sadness:
+				requiredEmotionImage.color = Color.blue;
+				break;
+			case Utility.Emotions.Fear:
+				requiredEmotionImage.color = Color.black;
+				break;
+		}
+
+		return true;
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
-
+		if (playerAnswered)
+		{
+			timer += Time.deltaTime;
+			if (timer >= waitTime)
+			{
+				timer = 0.0f;
+				playerAnswered = false;
+				NextQuestion();
+			}
+		}
 	}
 
 	public void ShowQuestion(bool show)
@@ -95,8 +167,11 @@ public class GamePlayManager : MonoBehaviour
 		// Change the bar accordingly
 		scoreBar.fillAmount = (float)currentScore / maxScore;
 
+		playerAnswered = true;
+
+		ShowQuestion(false);
 		// TODO: REMOVE DEBUG CODE
-		NextQuestion();
+		//NextQuestion();
 	}
 
 	// Function that handles moving on to the next question. Call after showing audience feedback
@@ -105,23 +180,10 @@ public class GamePlayManager : MonoBehaviour
 		currQuestion++;
 		if (currQuestion == numQuestions)
 		{
-			// NewDay();
-			if (currentScore >= requiredScore)
-			{
-				// Game Won
-				Debug.Log("Win");
-				ShowQuestion(false);
+			if (NewDay() == false)
 				return;
-			}
-			else
-			{
-				// Game Lost
-				Debug.Log("Loss");
-				ShowQuestion(false);
-				return;
-			}
 		}
-		// TODO: REMOVE DEBUG CODE
+
 		ShowQuestion(true);
 	}
 }
