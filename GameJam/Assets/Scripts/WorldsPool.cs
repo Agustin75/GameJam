@@ -25,32 +25,32 @@ public class WorldsPool : MonoBehaviour {
         Feelings.Add(FearPhrases);
     }
 
-    public Phrase GetRandomPhrase(int feeling) {
+    public Phrase GetRandomPhrase(Utility.Emotions feeling) {
         Phrase temp = new Phrase();
         switch (feeling)
         {
-            case (int) Utility.emotions.Happy:
+            case Utility.Emotions.Happiness:
                 temp = HappyPhrases[Random.Range(0, HappyPhrases.Length - 1)];
                 break;
-            case (int)Utility.emotions.Angry:
+            case Utility.Emotions.Anger:
                 temp = AngryPhrases[Random.Range(0, AngryPhrases.Length - 1)];
                 break;
-            case (int)Utility.emotions.Sadness:
+            case Utility.Emotions.Sadness:
                 temp = SadPhrases[Random.Range(0, SadPhrases.Length - 1)];
                 break;
-            case (int)Utility.emotions.Fear:
+            case Utility.Emotions.Fear:
                 temp = FearPhrases[Random.Range(0, FearPhrases.Length - 1)];
                 break;
         }
         return temp;
     }
-    int ramdomizeForEva(int notThisNumber)
+    int ramdomizeForEva(Utility.Emotions notThisNumber)
     {
         int returnthisnumber = 0;
         do
         {
             returnthisnumber = Random.Range(0, 4);
-        } while (returnthisnumber == notThisNumber);
+        } while (returnthisnumber == (int)notThisNumber);
 
         return returnthisnumber;
     }
@@ -61,13 +61,13 @@ public class WorldsPool : MonoBehaviour {
         _temp[indexa] = _temp[indexb];
         _temp[indexb] = a;
     }
-    public Phrase[] GetRandomPhrases(int feelingID)
+    public Phrase[] GetRandomPhrases(Utility.Emotions feelingID)
     {
         Phrase[] temp = new Phrase[3];
         
         switch (feelingID)
         {
-            case (int)Utility.emotions.Happy:
+            case Utility.Emotions.Happiness:
                 {
                     temp[0] = HappyPhrases[Random.Range(0, HappyPhrases.Length - 1)];
 
@@ -83,8 +83,7 @@ public class WorldsPool : MonoBehaviour {
                     }
                     return temp;
                 }
-                break;
-            case (int)Utility.emotions.Angry:
+            case Utility.Emotions.Anger:
                 {
                     temp[0] = AngryPhrases[Random.Range(0, AngryPhrases.Length - 1)];
 
@@ -101,8 +100,7 @@ public class WorldsPool : MonoBehaviour {
 
                     return temp;
                 }
-                break;
-            case (int)Utility.emotions.Sadness:
+            case Utility.Emotions.Sadness:
                 {
 
                 temp[0] = SadPhrases[Random.Range(0, SadPhrases.Length - 1)];
@@ -120,8 +118,7 @@ public class WorldsPool : MonoBehaviour {
 
                     return temp;
                 }
-                break;
-            case (int)Utility.emotions.Fear:
+            case Utility.Emotions.Fear:
                 {
 
                 temp[0] = FearPhrases[Random.Range(0, FearPhrases.Length - 1)];
@@ -139,7 +136,6 @@ public class WorldsPool : MonoBehaviour {
 
                     return temp;
                 }
-                break;
             default:
                 break;
         }
@@ -154,13 +150,13 @@ public struct Phrase
     [SerializeField]
     string phrase;
     [SerializeField]
-    int feelingID;
+    Utility.Emotions feelingID;
 
-    public string getPhrase()
+    public string GetPhrase()
     {
         return phrase;
     }
-    public int getFeelingID()
+    public Utility.Emotions GetFeelingID()
     {
         return feelingID;
     }

@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Utility : MonoBehaviour {
 
-	public enum emotions
+	public enum Emotions
     {
-        Happy,Angry,Sadness,Fear
+		Happiness, Anger, Sadness,Fear
     }
 
     public void LoadScene(string scene)

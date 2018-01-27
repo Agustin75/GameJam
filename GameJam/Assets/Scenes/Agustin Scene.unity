@@ -344,6 +344,79 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &529021158
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 529021160}
+  - component: {fileID: 529021159}
+  m_Layer: 5
+  m_Name: WorldPools
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &529021159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 529021158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7231d3e66de80d24d92206f8896d1e6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HappyPhrases:
+  - phrase: Happy 1
+    feelingID: 0
+  - phrase: Happy 2
+    feelingID: 0
+  - phrase: Happy 3
+    feelingID: 0
+  AngryPhrases:
+  - phrase: Anger 1
+    feelingID: 1
+  - phrase: Anger 2
+    feelingID: 1
+  - phrase: Anger 3
+    feelingID: 1
+  SadPhrases:
+  - phrase: Sad 1
+    feelingID: 2
+  - phrase: Sad 2
+    feelingID: 2
+  - phrase: Sad 3
+    feelingID: 2
+  FearPhrases:
+  - phrase: Fear 1
+    feelingID: 3
+  - phrase: Fear 2
+    feelingID: 3
+  - phrase: Fear 3
+    feelingID: 3
+--- !u!224 &529021160
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 529021158}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 720, y: 315, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 720, y: 315}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &530263458
 GameObject:
   m_ObjectHideFlags: 0
@@ -512,11 +585,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 166184ff72c8d3846a320eb8db4a779e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  phrasePools: {fileID: 529021159}
   answerButtons:
   - {fileID: 1667486855}
   - {fileID: 1683184543}
   - {fileID: 1652653641}
+  answerTexts:
+  - {fileID: 175763661}
+  - {fileID: 530263460}
+  - {fileID: 35490609}
   scoreBar: {fileID: 1132926604}
+  requiredScore: 15
+  maxScore: 25
+  currentScore: 0
+  correctScore: 1
+  wrongScore: 1
+  numAnswers: 3
+  numQuestions: 5
+  currQuestion: 0
+  numDays: 0
 --- !u!224 &971966093
 RectTransform:
   m_ObjectHideFlags: 0
@@ -589,12 +676,12 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: 5c5198db552fbee428233d1429051d6e, type: 3}
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
+  m_FillMethod: 0
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
 --- !u!222 &1132926605
@@ -620,7 +707,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1652653640
 RectTransform:
   m_ObjectHideFlags: 0
@@ -678,7 +765,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1652653642}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 971966092}
+        m_MethodName: AnswerChosen
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1652653642
@@ -731,7 +829,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1667486854
 RectTransform:
   m_ObjectHideFlags: 0
@@ -789,7 +887,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1667486856}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 971966092}
+        m_MethodName: AnswerChosen
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1667486856
@@ -842,7 +951,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1683184542
 RectTransform:
   m_ObjectHideFlags: 0
@@ -900,7 +1009,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1683184544}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 971966092}
+        m_MethodName: AnswerChosen
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1683184544

@@ -5,7 +5,7 @@ using UnityEngine;
 public class TestThingies : MonoBehaviour {
 
     [SerializeField]
-    int feeling;
+	Utility.Emotions feeling;
 
     [SerializeField]
     Phrase curentphrase;
