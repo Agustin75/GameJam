@@ -37,14 +37,24 @@ public class FaceGenerator : MonoBehaviour {
     [SerializeField]
     Sprite[] MouthPool;
 
+ 
     private void Start()
     {
+        PlayerPrefs.GetInt("Hair");
+        PlayerPrefs.GetInt("Eye");
+        PlayerPrefs.GetInt("EyeBrow");
+        PlayerPrefs.GetInt("Nose");
+        PlayerPrefs.GetInt("Stache");
+        PlayerPrefs.GetInt("Mouth");
+        PlayerPrefs.GetInt("name");
+        PlayerPrefs.GetInt("surname");
         //set names
         TextAsset tfn = Resources.Load<TextAsset>("names");
         firstnames = tfn.text.Split('\n');
         TextAsset tln = Resources.Load<TextAsset>("surnames");
         surnames = tln.text.Split('\n');
         Generatefaceandname();
+        
     }
 
 

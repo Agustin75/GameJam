@@ -33,6 +33,14 @@ public class GamePlayManager : MonoBehaviour
     {
         return requiredEmotion;
     }
+    public int getCurrentScore()
+    {
+        return currentScore;
+    }
+    public int getMaxScore()
+    {
+        return maxScore;
+    }
     // Use this for initialization
     void Start()
 	{

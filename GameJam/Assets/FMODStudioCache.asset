@@ -13,14 +13,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114989078083753334}
-  - {fileID: 114405387290768800}
-  - {fileID: 114679658223743450}
+  - {fileID: 114146370130391532}
+  - {fileID: 114087872966951776}
   EditorEvents:
   - {fileID: 114242725231941718}
-  MasterBankRef: {fileID: 114679658223743450}
+  MasterBankRef: {fileID: 114087872966951776}
   StringsBankRef: {fileID: 114989078083753334}
-  stringsBankWriteTime: 636526076222303918
+  stringsBankWriteTime: 636526094314787882
   cacheVersion: 2
+--- !u!114 &114087872966951776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: E:\Unity Files\GameJam\GameJam\Assets\Audio\FMOD\GameJam\Build\Desktop\Master
+    Bank.bank
+  lastModified: 636526094304613938
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 12474
+  Exists: 1
+--- !u!114 &114146370130391532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: E:\Unity Files\GameJam\GameJam\Assets\Audio\FMOD\GameJam\Build\Desktop\Music.bank
+  lastModified: 636526094353551776
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 3357504
+  Exists: 1
 --- !u!114 &114163916325066204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71,7 +108,7 @@ MonoBehaviour:
   Path: event:/GameJam Demo the First
   guid: c098755173438546bfd08b7c5d93e93b
   Banks:
-  - {fileID: 114405387290768800}
+  - {fileID: 114146370130391532}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -277,7 +314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets\Audio\FMOD\GameJam\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636526076222303918
+  lastModified: 636526094314787882
   LoadResult: 0
   FileSizes:
   - Name: 
