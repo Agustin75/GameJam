@@ -143,7 +143,7 @@ public class GamePlayManager : MonoBehaviour
 		// If they chose the correct answer
 		if (answers[answer].GetFeelingID() == requiredEmotion)
 		{
-            FeedbackText.GetComponent<Text>().text = "Good Choice!";
+            FeedbackText.GetComponent<Text>().text = "Good choice of words!";
             FeedbackText.GetComponent<Animator>().SetTrigger("QuestionFired");
             GetComponent<AudioSource>().clip = soundsCorrectWrong[0];
             GetComponent<AudioSource>().Play();
@@ -156,7 +156,7 @@ public class GamePlayManager : MonoBehaviour
 		}
 		else
 		{
-            FeedbackText.GetComponent<Text>().text = "That didn't sound good...";
+            FeedbackText.GetComponent<Text>().text = "Bad choice of words!";
             FeedbackText.GetComponent<Animator>().SetTrigger("QuestionFired");
             GetComponent<AudioSource>().clip = soundsCorrectWrong[1];
             GetComponent<AudioSource>().Play();
