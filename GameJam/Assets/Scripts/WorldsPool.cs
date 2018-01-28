@@ -17,7 +17,7 @@ public class WorldsPool : MonoBehaviour {
 
     private void Start()
     {
-        DontDestroyOnLoad(this.gameObject);
+       // DontDestroyOnLoad(this.gameObject);
 
         Feelings.Add(HappyPhrases);
         Feelings.Add(AngryPhrases);

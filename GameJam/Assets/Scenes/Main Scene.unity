@@ -854,7 +854,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -678483637
+  randomSeed: 1365407704
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -4397,7 +4397,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -325053345
+  randomSeed: 1064670714
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -8038,7 +8038,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 205514366
+  randomSeed: 1238427745
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -11373,7 +11373,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -11952,17 +11952,42 @@ MonoBehaviour:
       so we\u2019ll never have to delete our favorite games off of our devices ever
       again!"
     feelingID: 0
-  - shortVersion: I'll give away bags!
+  - shortVersion: I'll give away bean bags!
     phrase: Under my administration, no one will ever go without a bean bag chair,
       no matter how many people show up for the LAN party.
     feelingID: 0
-  - shortVersion: I'll give away loot space!
+  - shortVersion: I'll give away loot!
     phrase: I know we all suffer from insufficient space to store our loot. If I am
       elected, I will work toward extending our sale by two whole storage spaces!
     feelingID: 0
-  - shortVersion: Lower taxes
+  - shortVersion: I'll lower taxes!
     phrase: "By reallocating the city\u2019s funds, we can shave off 10% of our annual
       income tax. That\u2019s three whole games a year we can add to our collections."
+    feelingID: 0
+  - shortVersion: I'll give you security!
+    phrase: A safe citizen is a happy citizen, I've always said. That means that every
+      single one of you will get the best anti virus out there, so that safety is
+      never an issue!
+    feelingID: 0
+  - shortVersion: Energy bills will be reduced!
+    phrase: Having a smart goverment means that everybody in the city wins. With the
+      proper investments and industry privatizations, your electricity bill will be
+      lower than ever, no matter how many kilowatts per hour you consume!
+    feelingID: 0
+  - shortVersion: The internet will be faster!
+    phrase: One of our biggest plans is to bring optic fiber to every single household,
+      giving you a faster and more stableinternet for whatever game you need it!
+    feelingID: 0
+  - shortVersion: Freedom of play
+    phrase: Have you ever been denied to play a game? Well, suffer no more! If I win,
+      the laws regarding gaming limitations will be modified so that everyone can
+      play any game they want, no restrictions. Everyone deserves to play everything!
+    feelingID: 0
+  - shortVersion: Better TV shows will appear
+    phrase: Today's tv shows are both boring and empty. As a president, I promise
+      you that will change. You'll never see any other pointless show abou brainless
+      people doing brainless things. There'll be actual plots, depth in stories and
+      valuable things to learn.
     feelingID: 0
   AngryPhrases:
   - shortVersion: They took our freedom!
@@ -11979,7 +12004,7 @@ MonoBehaviour:
     phrase: He says that dice rolls are fair. How is it fair when his rolls never
       drop below 18!?
     feelingID: 1
-  - shortVersion: He's not transparent
+  - shortVersion: He's not transparent!
     phrase: "The Bandwidth Neutrality act was made to ensure that everyone who plays
       can compete fairly, and equally. But, look at the records! His speed is the
       only one who\u2019s stayed consistent during his entire administration. Him
@@ -11994,8 +12019,25 @@ MonoBehaviour:
       to the public! To whoever can afford to buy them. But, he\u2019s laid claim
       to all of them in the posterity and redundant backups for his personal collection."
     feelingID: 1
+  - shortVersion: He didn't do what he promised!
+    phrase: It can't be just me. I won't forget when I was promised that super sexy
+      screensaver for every PC in the city. Several years have passed and I still
+      don't see anything. Do you?
+    feelingID: 1
+  - shortVersion: He's a salty gamer!
+    phrase: I played online coop with him once. He's the worst teammate you could
+      ever ask for. Swears, does not cooperate and is abd at the game. Would you want
+      someone like that as your president?
+    feelingID: 1
+  - shortVersion: He is a normie
+    phrase: He likes normie memes. What esle do I need to say?
+    feelingID: 1
+  - shortVersion: He's a bad teammate
+    phrase: God forbid that you ever have to work with him again. The guy's not organized
+      at all! I just can't imagine how he pulled through as president before...
+    feelingID: 1
   SadPhrases:
-  - shortVersion: We mourn the dead
+  - shortVersion: We mourn the dead today
     phrase: "Today, I\u2019d like to take some time to remember the late Steve Arneson,
       the clone who spent his life rediscovering his progenitors D&D legacy."
     feelingID: 2
@@ -12003,26 +12045,50 @@ MonoBehaviour:
     phrase: Today, the entire nations suffers. With this tragic loss of data, all
       of our cloud saves have been lost.
     feelingID: 2
-  - shortVersion: We've lost data
+  - shortVersion: We've lost data :(
     phrase: After the earthquake, some of the backup servers failed to start up. The
       result, is the loss of our favorite pizza recipes and slurpee flavors.
     feelingID: 2
-  - shortVersion: We have less soda each day
+  - shortVersion: Sodas are dissapearing :(
     phrase: We are all affected by this tragic chain of events. Without Dripsi soda
       company, there will be no more Mountain Slew to keep raids running at night.
     feelingID: 2
-  - shortVersion: Disney dissapointed
+  - shortVersion: Disney sadly dissapointed us
     phrase: On this day, we all reel from the news that Disney has acquired the last
       of the holdout companies, and that all continuities are going to be rebooted,
       and reorganized.
     feelingID: 2
+  - shortVersion: I feel... blue...
+    phrase: I would feel so sad if I wasn't able to be the one in charge of leading
+      this amazing country... There's just so many things I want to do!
+    feelingID: 2
+  - shortVersion: My mom's dying wish...
+    phrase: My mom passed away a few months ago, and it was her dying wish that I
+      had to become this country's president. Please, I beg you, don' let the dying
+      wish of a marvelous woman go to waste!
+    feelingID: 2
+  - shortVersion: I'm sick...
+    phrase: Not so long ago I was diagnosed with a terrible disease that cut my estimated
+      lifespan by a lot. Having so little time to live, I have nothing to lose. My
+      motives are sincere, and I have nothing to hide from you. If you vote for me,
+      you will not be dissapointed.
+    feelingID: 2
+  - shortVersion: No one will play D&D with me...
+    phrase: D&D is my favourite game, but I've never had friends to play with. I'm
+      a wonderful dungeon master, and therefore I have the skills to be the best president!
+    feelingID: 2
+  - shortVersion: some people are not able to play games...
+    phrase: Isn't it harthbreaking to think that some people can't play games beause
+      they have a disability? I promise to inlcude every single gamer, no mather if
+      blind, deaf, or having any other condition!
+    feelingID: 2
   FearPhrases:
-  - shortVersion: Our things may not be safe
+  - shortVersion: Our possessions may not be safe
     phrase: "He says you can trust him, but what recourse will you have when he loses
       his temper and invokes the Blue Shell protocol? Who\u2019s going to protect
       your energy pylons then?"
     feelingID: 3
-  - shortVersion: War may be close!
+  - shortVersion: War is close!
     phrase: How many times will he use a presidential order to alter the official
       Star Wars canon? Or Harry Potter? How long until Solo is the only one shooting,
       or the Ewoks are being gunned before the end of Return of the Jedi?
@@ -12044,6 +12110,31 @@ MonoBehaviour:
     phrase: "He put the axe to Call of Honor before the alpha was even released to
       the public, \u201Cbecause it sucked,\u201D and told them to start from scratch.
       How long will we have to wait for that!?"
+    feelingID: 3
+  - shortVersion: Spiders Everywhere
+    phrase: Do you like those little 8-legged monsters? because living in a house
+      infested with those creatures will be like nothing against what will happen
+      if I don't win the presidency
+    feelingID: 3
+  - shortVersion: What if lights go off?
+    phrase: Do you like those little 8-legged monsters? because living in a house
+      iThe thought of playing a game and suddenly losing it all due to a blackout
+      haunts my dreams as the worst possible nightmare... I don't know you, but I
+      wouldn't feel safe if the wrong person was in charge...
+    feelingID: 3
+  - shortVersion: Your saves could be lost
+    phrase: If you leave the servers in the hands of the wrong people, anything could
+      happen to your precious save files. Do you want that to happen?
+    feelingID: 3
+  - shortVersion: Your life could be at risk
+    phrase: He promised security during his goverment but I never felt it. Every day
+      that I leave my house I don't know if it'll be the last. I'm tired of feeling
+      that and I'll do something about it!
+    feelingID: 3
+  - shortVersion: Are you trusting the right person?
+    phrase: Look at him! Does he look like the person you want to see in charge? look
+      at me instead! I'm the embodiment of all what he is not, I'm the embodiment
+      of all the good things!
     feelingID: 3
 --- !u!4 &1149400840
 Transform:
@@ -12291,7 +12382,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1360860061
+  randomSeed: 961672859
   InitialModule:
     serializedVersion: 3
     enabled: 1
