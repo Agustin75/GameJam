@@ -24,8 +24,8 @@ public class ParticleManagerScript : MonoBehaviour {
         while (true)
         {
            
-            float curr = gameplayman.currentScore;
-            float goal = gameplayman.maxScore;
+            float curr = gameplayman.GetCurrentScore();
+            float goal = gameplayman.GetMaxScore();
             for (int i = 0; i < particles.Length; i++)
             {
                 ParticleSystem.MainModule p = particles[i].main;

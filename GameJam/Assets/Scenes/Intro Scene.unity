@@ -909,7 +909,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimeBetweenLetters: 0.05
   textToanimate: {fileID: 479068745}
-  newScene: Agustin Scene
+  newScene: Main Scene
 --- !u!1001 &1368660201
 Prefab:
   m_ObjectHideFlags: 0
