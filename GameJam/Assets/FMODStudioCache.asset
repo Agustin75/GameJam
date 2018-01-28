@@ -13,13 +13,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114989078083753334}
-  - {fileID: 114146370130391532}
-  - {fileID: 114087872966951776}
+  - {fileID: 114479448728356568}
+  - {fileID: 114993793885898782}
+  - {fileID: 114995097532706296}
   EditorEvents:
-  - {fileID: 114242725231941718}
-  MasterBankRef: {fileID: 114087872966951776}
+  - {fileID: 114935186580749854}
+  - {fileID: 114516359717844964}
+  - {fileID: 114214119497651880}
+  - {fileID: 114496715688481158}
+  - {fileID: 114236237493924512}
+  - {fileID: 114300644680552730}
+  MasterBankRef: {fileID: 114993793885898782}
   StringsBankRef: {fileID: 114989078083753334}
-  stringsBankWriteTime: 636526094314787882
+  stringsBankWriteTime: 636526866490000000
   cacheVersion: 2
 --- !u!114 &114087872966951776
 MonoBehaviour:
@@ -40,6 +46,27 @@ MonoBehaviour:
   - Name: 
     Value: 12474
   Exists: 1
+--- !u!114 &114094104536070716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/GameJam Sad Music Loop 1
+  guid: aaea3adf10586741b0884e33defb3038
+  Banks: []
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 93492
 --- !u!114 &114146370130391532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76,6 +103,50 @@ MonoBehaviour:
   - Name: 
     Value: 3357504
   Exists: 1
+--- !u!114 &114214119497651880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/GameJam Anger Loop 1
+  guid: b184e471e3409d4c95c0ecab1cd33267
+  Banks:
+  - {fileID: 114479448728356568}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 55536
+--- !u!114 &114236237493924512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Button pressed
+  guid: b738443652274c4abd798855040bbbb4
+  Banks:
+  - {fileID: 114995097532706296}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 312
 --- !u!114 &114237840574183088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,6 +187,28 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 282666
+--- !u!114 &114300644680552730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Button Hover Sound
+  guid: cc7396e4dc6ed44eba8b279ac38cc692
+  Banks:
+  - {fileID: 114995097532706296}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2000
 --- !u!114 &114364063098989696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,6 +284,89 @@ MonoBehaviour:
   - Name: 
     Value: 3357504
   Exists: 1
+--- !u!114 &114473798589632014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/GameJam Anger Loop 1
+  guid: b184e471e3409d4c95c0ecab1cd33267
+  Banks: []
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 55536
+--- !u!114 &114479448728356568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: /Users/brandonjones/GameJam/GameJam/Assets/Audio/FMOD/GameJam/Build/Desktop/Music.bank
+  lastModified: 636526866490000000
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 5751424
+  Exists: 1
+--- !u!114 &114496715688481158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/TMWSTW - GameJam - 1:27:18, 6.56 PM
+  guid: ded7902ae7be894fb382776a690f4901
+  Banks:
+  - {fileID: 114479448728356568}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 216058
+--- !u!114 &114516359717844964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/GameJam Sad Music Loop 1
+  guid: aaea3adf10586741b0884e33defb3038
+  Banks:
+  - {fileID: 114479448728356568}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 93492
 --- !u!114 &114608514264961786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,6 +385,27 @@ MonoBehaviour:
   - Name: 
     Value: 3357504
   Exists: 1
+--- !u!114 &114621200225573280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/GameJam Rage Loop 1
+  guid: 34121b02b2cd814ab5d393093b0baaad
+  Banks: []
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 85420
 --- !u!114 &114645601493598938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -283,6 +480,28 @@ MonoBehaviour:
   - Name: 
     Value: 3357504
   Exists: 1
+--- !u!114 &114935186580749854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/GameJam Rage Loop 1
+  guid: 34121b02b2cd814ab5d393093b0baaad
+  Banks:
+  - {fileID: 114479448728356568}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 85420
 --- !u!114 &114986156300495516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -313,10 +532,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Path: Assets\Audio\FMOD\GameJam\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636526094314787882
+  Path: Assets/Audio/FMOD/GameJam/Build/Desktop/Master Bank.strings.bank
+  lastModified: 636526866490000000
   LoadResult: 0
   FileSizes:
-  - Name: 
-    Value: 780
+  - Name: Desktop
+    Value: 1142
+  Exists: 1
+--- !u!114 &114993793885898782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: /Users/brandonjones/GameJam/GameJam/Assets/Audio/FMOD/GameJam/Build/Desktop/Master
+    Bank.bank
+  lastModified: 636526866490000000
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 12566
+  Exists: 1
+--- !u!114 &114995097532706296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: /Users/brandonjones/GameJam/GameJam/Assets/Audio/FMOD/GameJam/Build/Desktop/UI.bank
+  lastModified: 636526866490000000
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 28448
   Exists: 1
