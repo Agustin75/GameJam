@@ -17,7 +17,9 @@ public class GamePlayManager : MonoBehaviour
 	public Image scoreBar;
 	public Image requiredEmotionImage;
 	public Sprite[] emotionFaces;
-
+    public Slider SliderScoreTotal;
+    public GameObject FeedbackText;
+    public GameObject TheNextDayImage;
 	// Private Members
 	private int requiredScore, maxScore;
 	private int currentScore, correctScore, wrongScore;
@@ -31,7 +33,7 @@ public class GamePlayManager : MonoBehaviour
 	private bool playerAnswered;
 
 	[SerializeField]
-	private string winScene, loseScene;
+	private string winScene, loseScene = "";
 
     public Utility.Emotions GetCurrentEmotion()
     {
@@ -60,7 +62,9 @@ public class GamePlayManager : MonoBehaviour
 		requiredScore = PlayerPrefs.GetInt("RequiredScore");
 
 		ResetValues();
-
+        float tempa = maxScore;
+        float tempb = requiredScore;
+        SliderScoreTotal.value = (tempb/tempa);
 		ShowQuestion(true);
 	}
 
@@ -69,7 +73,7 @@ public class GamePlayManager : MonoBehaviour
 		playerAnswered = false;
 		currentDay++;
 		currQuestion = 0;
-
+        TheNextDayImage.GetComponent<Animator>().SetTrigger("thenextday");
 		if (currentDay == numDays)
 		{
 			if (currentScore >= requiredScore)
@@ -125,13 +129,17 @@ public class GamePlayManager : MonoBehaviour
 		// If they chose the correct answer
 		if (answers[answer].GetFeelingID() == requiredEmotion)
 		{
+            FeedbackText.GetComponent<Text>().text = "Good Choice!";
+            FeedbackText.GetComponent<Animator>().SetTrigger("QuestionFired");
 			// Increase their score
 			currentScore += correctScore;
 		}
 		else
 		{
-			// Decrease their score if it is higher than 0
-			if (currentScore > 0)
+            FeedbackText.GetComponent<Text>().text = "That didn't sound good...";
+            FeedbackText.GetComponent<Animator>().SetTrigger("QuestionFired");
+            // Decrease their score if it is higher than 0
+            if (currentScore > 0)
 				currentScore -= wrongScore;
 
 			// Set the score to 0 if its negative

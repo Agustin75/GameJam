@@ -340,6 +340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3dd9b12c7a199b4b91564a51221cb66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FirstScene: 0
   hair: {fileID: 1848206704}
   eyebrows:
   - {fileID: 1856130911}
@@ -354,32 +355,38 @@ MonoBehaviour:
   HairPool:
   - {fileID: 21300000, guid: c4f48914a4c070148b1e8d63a978f9ec, type: 3}
   - {fileID: 21300000, guid: b26389280f216dc4993ce14ea408a719, type: 3}
+  - {fileID: 21300000, guid: 3b9299770f133b14e888a728eb1c1d96, type: 3}
   EyePool:
   - {fileID: 21300000, guid: 75029d364adf3414da0b3f9d51c2d9e4, type: 3}
   - {fileID: 21300000, guid: 17bdd7cb4f67dba4491c41a063628009, type: 3}
   - {fileID: 21300000, guid: a9ab00c70b6eef84d8dcfad7429ee240, type: 3}
   - {fileID: 21300000, guid: 2ff603193c54cd74aa4258797de4f9e5, type: 3}
   - {fileID: 21300000, guid: 234d7935d6cbe3440974251cecdf8e74, type: 3}
+  - {fileID: 21300000, guid: 93e0489ffa34b0844a363116802a1340, type: 3}
   EyebrowPool:
   - {fileID: 21300000, guid: dafd7e633bc254f49b546049f24498fb, type: 3}
+  - {fileID: 21300000, guid: 26c9dfb1a59259f4db6d7e57c42b2775, type: 3}
   NosePool:
   - {fileID: 21300000, guid: fccd7921b8085b14290b8254c1371882, type: 3}
   - {fileID: 21300000, guid: 8620161676765ff4182b1af1d83c470c, type: 3}
   - {fileID: 21300000, guid: 7fa9fbc0bdcc43e4d9d6f7bffd01fbda, type: 3}
   - {fileID: 21300000, guid: ed644d8164e5c4e4d9b834dde4cab487, type: 3}
   - {fileID: 21300000, guid: eb9b249a35e91d74f93d65d09a89809c, type: 3}
+  - {fileID: 21300000, guid: e3f0c6f2e4e303647a1bef2990ef07f9, type: 3}
   StachePool:
   - {fileID: 21300000, guid: 41c3ba0ebcb88a24697c707fcd30ad88, type: 3}
   - {fileID: 21300000, guid: f921076e66e808b4d8b2b258cf19a6c3, type: 3}
   - {fileID: 21300000, guid: e8064a6ca90c9724e90e700421781699, type: 3}
   - {fileID: 21300000, guid: d0f56221f11af7e48bbed6eecc25f9bc, type: 3}
   - {fileID: 21300000, guid: 2ca2544e9a064bd41b3fb8223e6bcd6b, type: 3}
+  - {fileID: 21300000, guid: 7a09975f675a0ba4791813f21935de65, type: 3}
   MouthPool:
   - {fileID: 21300000, guid: 01a5d6059da53654db0499a8159962b7, type: 3}
   - {fileID: 21300000, guid: 6f5da2c7e6d0b9148b7c7c50bb43f290, type: 3}
   - {fileID: 21300000, guid: 04fde627aa25ca14b93a32da83b37f66, type: 3}
   - {fileID: 21300000, guid: abf71310757c7c040b526e55fecc6d51, type: 3}
   - {fileID: 21300000, guid: 1b67223da8a99b348a4687eb2cf8dc7d, type: 3}
+  - {fileID: 21300000, guid: 721933365c9197b4f91ce39f507a0556, type: 3}
 --- !u!114 &311232340
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1576,8 +1583,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 60161d41b2c1198409d29ac4f8b16e35, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4

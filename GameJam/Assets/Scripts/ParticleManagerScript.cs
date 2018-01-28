@@ -11,13 +11,11 @@ public class ParticleManagerScript : MonoBehaviour {
     ParticleSystem[] particles;
 	// Use this for initialization
 	void Start () {
+       
         StartCoroutine(ColorParticles());
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+	
 
     IEnumerator ColorParticles()
     {
@@ -29,7 +27,7 @@ public class ParticleManagerScript : MonoBehaviour {
             for (int i = 0; i < particles.Length; i++)
             {
                 ParticleSystem.MainModule p = particles[i].main;
-                p.simulationSpeed = (curr/goal)*2;
+                //p.simulationSpeed = (curr/goal)*2;
                 switch (gameplayman.GetCurrentEmotion())
                 {
                     case Utility.Emotions.Happiness:

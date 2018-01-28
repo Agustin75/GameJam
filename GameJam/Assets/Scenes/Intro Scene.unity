@@ -283,11 +283,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 114385946496030428, guid: 2417942e92c36a9439c1080773537580,
-        type: 2}
-      propertyPath: FirstScene
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2417942e92c36a9439c1080773537580, type: 2}
   m_IsPrefabParent: 0
@@ -1029,7 +1024,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimeBetweenLetters: 0.05
   textToanimate: {fileID: 479068745}
-  newScene: Agustin Scene
+  newScene: Main Scene
 --- !u!1001 &1368660201
 Prefab:
   m_ObjectHideFlags: 0
