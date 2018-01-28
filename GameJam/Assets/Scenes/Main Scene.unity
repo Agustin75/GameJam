@@ -145,7 +145,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -20, y: -20}
+  m_SizeDelta: {x: -60, y: -60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &14859711
 MonoBehaviour:
@@ -296,7 +296,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 77042192}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 610, y: -420, z: 0}
+  m_LocalPosition: {x: 610, y: -383.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 14859710}
@@ -305,8 +305,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 610, y: -420}
-  m_SizeDelta: {x: 400, y: 150}
+  m_AnchoredPosition: {x: 610, y: -383.6}
+  m_SizeDelta: {x: 400, y: 222.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &77042194
 MonoBehaviour:
@@ -486,7 +486,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 144608887}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 399, y: 302, z: 0}
+  m_LocalPosition: {x: 366.2, y: 400.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 890126813}
@@ -494,8 +494,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 399, y: 302}
-  m_SizeDelta: {x: 600, y: 300}
+  m_AnchoredPosition: {x: 366.2, y: 400.5}
+  m_SizeDelta: {x: 534.3, y: 103}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &144608889
 MonoBehaviour:
@@ -509,7 +509,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -520,7 +520,7 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 75
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 79
     m_Alignment: 0
@@ -561,7 +561,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 158334719}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -420, z: 0}
+  m_LocalPosition: {x: 0, y: -383.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1431975808}
@@ -570,8 +570,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -420}
-  m_SizeDelta: {x: 400, y: 150}
+  m_AnchoredPosition: {x: 0, y: -383.6}
+  m_SizeDelta: {x: 400, y: 222.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &158334721
 MonoBehaviour:
@@ -4216,7 +4216,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 485864762}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.525009, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 608871335}
@@ -4224,8 +4224,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 8.525003, y: 0}
-  m_SizeDelta: {x: -37.050007, y: -20}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -60, y: -60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &485864764
 MonoBehaviour:
@@ -4397,7 +4397,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1064670714
+  randomSeed: -1868512830
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -7810,7 +7810,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 608871334}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -610, y: -420, z: 0}
+  m_LocalPosition: {x: -610, y: -383.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 485864763}
@@ -7819,8 +7819,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -610, y: -420}
-  m_SizeDelta: {x: 400, y: 150}
+  m_AnchoredPosition: {x: -610, y: -383.6}
+  m_SizeDelta: {x: 400, y: 222.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &608871336
 MonoBehaviour:
@@ -11947,7 +11947,7 @@ MonoBehaviour:
     phrase: I will not sit idle in my administration. If I am elected, I will invest
       in bandwidth innovations to make it better, faster, and cheaper!
     feelingID: 0
-  - shortVersion: life will be easy for everyone!
+  - shortVersion: Life will be easy for everyone!
     phrase: "Why should we sacrifice our children? I propose individual server farms
       so we\u2019ll never have to delete our favorite games off of our devices ever
       again!"
@@ -12041,15 +12041,15 @@ MonoBehaviour:
     phrase: "Today, I\u2019d like to take some time to remember the late Steve Arneson,
       the clone who spent his life rediscovering his progenitors D&D legacy."
     feelingID: 2
-  - shortVersion: We have no funds :(
+  - shortVersion: We have no funds
     phrase: Today, the entire nations suffers. With this tragic loss of data, all
       of our cloud saves have been lost.
     feelingID: 2
-  - shortVersion: We've lost data :(
+  - shortVersion: We've lost data
     phrase: After the earthquake, some of the backup servers failed to start up. The
       result, is the loss of our favorite pizza recipes and slurpee flavors.
     feelingID: 2
-  - shortVersion: Sodas are dissapearing :(
+  - shortVersion: Sodas are dissapearing
     phrase: We are all affected by this tragic chain of events. Without Dripsi soda
       company, there will be no more Mountain Slew to keep raids running at night.
     feelingID: 2
@@ -12077,7 +12077,7 @@ MonoBehaviour:
     phrase: D&D is my favourite game, but I've never had friends to play with. I'm
       a wonderful dungeon master, and therefore I have the skills to be the best president!
     feelingID: 2
-  - shortVersion: some people are not able to play games...
+  - shortVersion: Some people are not able to play games...
     phrase: Isn't it harthbreaking to think that some people can't play games beause
       they have a disability? I promise to inlcude every single gamer, no mather if
       blind, deaf, or having any other condition!
@@ -12382,7 +12382,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 961672859
+  randomSeed: 12475146
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -15685,7 +15685,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -20, y: -20}
+  m_SizeDelta: {x: -60, y: -60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1431975809
 MonoBehaviour:

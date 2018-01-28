@@ -10,6 +10,8 @@ public class TextSpeed : MonoBehaviour
 	[SerializeField]
 	Text textToanimate;
 	[SerializeField]
+	Image textBox;
+	[SerializeField]
 	string newScene;
 
 	string originaltext;
@@ -24,6 +26,7 @@ public class TextSpeed : MonoBehaviour
 
 	public void Animate()
 	{
+		textBox.gameObject.SetActive(true);
 		StartCoroutine(AnimateText());
 	}
 
