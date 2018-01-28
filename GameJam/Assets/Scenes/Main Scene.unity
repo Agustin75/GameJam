@@ -4367,7 +4367,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 99371eede160b9248a115d6944ea0824, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 57d1c8399ff40a34c8f32f1280fecd1a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -16171,7 +16171,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1569285792}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 166184ff72c8d3846a320eb8db4a779e, type: 3}
+  m_Script: {fileID: 11500000, guid: d139ab0b08504d04384255ad099cfa2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   phrasePools: {fileID: 1149400839}
@@ -16203,6 +16203,8 @@ MonoBehaviour:
     type: 2}
   winScene: Victory Scene
   loseScene: Defeat Scene
+  changeDayTimer: 1.5
+  changeQuestionTimer: 2
 --- !u!4 &1569285794
 Transform:
   m_ObjectHideFlags: 0

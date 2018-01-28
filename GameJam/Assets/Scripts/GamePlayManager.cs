@@ -20,7 +20,7 @@ public class GamePlayManager : MonoBehaviour
     public Slider SliderScoreTotal;
     public GameObject FeedbackText;
     public GameObject TheNextDayImage;
-    public AudioClip[] soundsCorrectWrong;
+ public AudioClip[] soundsCorrectWrong;
     public GameObject PersonPrefab;
     List<GameObject> People = new List<GameObject>();
 	// Private Members
@@ -34,9 +34,13 @@ public class GamePlayManager : MonoBehaviour
 	private Phrase[] answers;
 	private int numDays;
 	private bool playerAnswered;
+	private bool changingDay;
+	private float currDayChangeTime, currQuestionChangeTime;
 
 	[SerializeField]
 	private string winScene, loseScene = "";
+	[SerializeField]
+	private float changeDayTimer, changeQuestionTimer;
 
     public Utility.Emotions GetCurrentEmotion()
     {
@@ -56,7 +60,7 @@ public class GamePlayManager : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
-        for (int i = 0; i < 50; i++)
+ for (int i = 0; i < 50; i++)
         {
             float x = (Random.Range(-9, 9));
             x /= 10f;
@@ -69,6 +73,7 @@ public class GamePlayManager : MonoBehaviour
         }
 		playerAnswered = false;
 		currentScore = currQuestion = currentDay = 0;
+		currDayChangeTime = currQuestionChangeTime = 0.0f;
 		requiredEmotion = (Utility.Emotions)Random.Range(0, System.Enum.GetValues(typeof(Utility.Emotions)).Length);
 
 		numDays = PlayerPrefs.GetInt("NumDays");
@@ -82,12 +87,53 @@ public class GamePlayManager : MonoBehaviour
 		ShowQuestion(true);
 	}
 
-	public bool NewDay()
+	// Update is called once per frame
+	void Update()
+	{
+		if (currQuestionChangeTime > 0.0f)
+		{
+			currQuestionChangeTime -= Time.deltaTime;
+			if (currQuestionChangeTime <= 0.0f)
+			{
+				currQuestionChangeTime = 0.0f;
+			}
+			else
+				return;
+		}
+
+		if (currDayChangeTime > 0.0f)
+		{
+			currDayChangeTime -= Time.deltaTime;
+			if (currDayChangeTime <= 0.0f)
+			{
+				currDayChangeTime = 0.0f;
+				NewDay();
+			}
+		}
+
+		if (playerAnswered)
+		{
+			if (Input.GetMouseButtonDown(0))
+			{
+				playerAnswered = false;
+				NextQuestion();
+				playerSpeechDialougeBox.gameObject.SetActive(false);
+			}
+		}
+	}
+
+	public void ResetDay()
 	{
 		playerAnswered = false;
 		currentDay++;
 		currQuestion = 0;
-        TheNextDayImage.GetComponent<Animator>().SetTrigger("thenextday");
+		TheNextDayImage.GetComponent<Animator>().SetTrigger("thenextday");
+		currDayChangeTime = changeDayTimer;
+		ShowQuestion(false);
+	}
+
+	public bool NewDay()
+	{
 		if (currentDay == numDays)
 		{
 			if (currentScore >= requiredScore)
@@ -100,27 +146,13 @@ public class GamePlayManager : MonoBehaviour
 				// Game Lost
 				Utility.LoadSceneA(loseScene);
 			}
-			ShowQuestion(false);
 			return false;
 		}
-
 		ResetValues();
 
-		return true;
-	}
+		ShowQuestion(true);
 
-	// Update is called once per frame
-	void Update()
-	{
-		if (playerAnswered)
-		{
-			if(Input.GetMouseButtonDown(0))
-			{
-				playerAnswered = false;
-				NextQuestion();
-				playerSpeechDialougeBox.gameObject.SetActive(false);
-			}
-		}
+		return true;
 	}
 
 	public void ShowQuestion(bool show)
@@ -143,7 +175,7 @@ public class GamePlayManager : MonoBehaviour
 		// If they chose the correct answer
 		if (answers[answer].GetFeelingID() == requiredEmotion)
 		{
-            FeedbackText.GetComponent<Text>().text = "Good choice of words!";
+             FeedbackText.GetComponent<Text>().text = "Good choice of words!";
             FeedbackText.GetComponent<Animator>().SetTrigger("QuestionFired");
             GetComponent<AudioSource>().clip = soundsCorrectWrong[0];
             GetComponent<AudioSource>().Play();
@@ -176,6 +208,7 @@ public class GamePlayManager : MonoBehaviour
 		scoreBar.fillAmount = (float)currentScore / maxScore;
 
 		playerAnswered = true;
+		currQuestionChangeTime = changeQuestionTimer;
 
 		playerSpeech.text = answers[answer].GetPhrase();
 		playerSpeechDialougeBox.gameObject.SetActive(true);
@@ -189,8 +222,8 @@ public class GamePlayManager : MonoBehaviour
 		currQuestion++;
 		if (currQuestion == numQuestions)
 		{
-			if (NewDay() == false)
-				return;
+			ResetDay();
+			return;
 		}
 
 		ShowQuestion(true);
