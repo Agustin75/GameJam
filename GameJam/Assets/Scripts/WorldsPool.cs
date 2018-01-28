@@ -30,16 +30,16 @@ public class WorldsPool : MonoBehaviour {
         switch (feeling)
         {
             case Utility.Emotions.Happiness:
-                temp = HappyPhrases[Random.Range(0, HappyPhrases.Length - 1)];
+                temp = HappyPhrases[Random.Range(0, HappyPhrases.Length)];
                 break;
             case Utility.Emotions.Anger:
-                temp = AngryPhrases[Random.Range(0, AngryPhrases.Length - 1)];
+                temp = AngryPhrases[Random.Range(0, AngryPhrases.Length)];
                 break;
             case Utility.Emotions.Sadness:
-                temp = SadPhrases[Random.Range(0, SadPhrases.Length - 1)];
+                temp = SadPhrases[Random.Range(0, SadPhrases.Length)];
                 break;
             case Utility.Emotions.Fear:
-                temp = FearPhrases[Random.Range(0, FearPhrases.Length - 1)];
+                temp = FearPhrases[Random.Range(0, FearPhrases.Length)];
                 break;
         }
         return temp;
@@ -61,85 +61,32 @@ public class WorldsPool : MonoBehaviour {
         _temp[indexa] = _temp[indexb];
         _temp[indexb] = a;
     }
+
     public Phrase[] GetRandomPhrases(Utility.Emotions feelingID)
     {
         Phrase[] temp = new Phrase[3];
-        
-        switch (feelingID)
-        {
-            case Utility.Emotions.Happiness:
-                {
-                    temp[0] = HappyPhrases[Random.Range(0, HappyPhrases.Length - 1)];
+		int randEmotion = (int)feelingID, index = 0;
+		Phrase previousPhrase = new Phrase();
 
-                    int randomtemp = ramdomizeForEva(feelingID);
-                    temp[1] = Feelings[randomtemp][Random.Range(0, Feelings[randomtemp].Length)];
+		while (index < 3)
+		{
+			temp[index] = GetRandomPhrase((Utility.Emotions)randEmotion);
 
-                    randomtemp = ramdomizeForEva(feelingID);
-                    temp[2] = Feelings[randomtemp][Random.Range(0, Feelings[randomtemp].Length)];
+			if (index == 0 || !(previousPhrase.GetAnswerPhrase().Equals(temp[index].GetAnswerPhrase())))
+			{
+				previousPhrase = temp[index];
+				index++;
+			}
 
-                    for (int i = 0; i < 5; i++)
-                    {
-                        swapLocalArray(temp, Random.Range(0,3), Random.Range(0, 3));
-                    }
-                    return temp;
-                }
-            case Utility.Emotions.Anger:
-                {
-                    temp[0] = AngryPhrases[Random.Range(0, AngryPhrases.Length - 1)];
+			while (randEmotion == (int)feelingID)
+				randEmotion = Random.Range(0, System.Enum.GetValues(typeof(Utility.Emotions)).Length);
+		}
 
-                    int randomtemp = ramdomizeForEva(feelingID);
-                    temp[1] = Feelings[randomtemp][Random.Range(0, Feelings[randomtemp].Length)];
-
-                    randomtemp = ramdomizeForEva(feelingID);
-                    temp[2] = Feelings[randomtemp][Random.Range(0, Feelings[randomtemp].Length)];
-
-                    for (int i = 0; i < 5; i++)
-                    {
-                        swapLocalArray(temp, Random.Range(0, 3), Random.Range(0, 3));
-                    }
-
-                    return temp;
-                }
-            case Utility.Emotions.Sadness:
-                {
-
-                temp[0] = SadPhrases[Random.Range(0, SadPhrases.Length - 1)];
-
-                int randomtemp = ramdomizeForEva(feelingID);
-                temp[1] = Feelings[randomtemp][Random.Range(0, Feelings[randomtemp].Length)];
-
-                randomtemp = ramdomizeForEva(feelingID);
-                temp[2] = Feelings[randomtemp][Random.Range(0, Feelings[randomtemp].Length)];
-
-                    for (int i = 0; i < 5; i++)
-                    {
-                        swapLocalArray(temp, Random.Range(0, 3), Random.Range(0, 3));
-                    }
-
-                    return temp;
-                }
-            case Utility.Emotions.Fear:
-                {
-
-                temp[0] = FearPhrases[Random.Range(0, FearPhrases.Length - 1)];
-
-                int randomtemp = ramdomizeForEva(feelingID);
-                temp[1] = Feelings[randomtemp][Random.Range(0, Feelings[randomtemp].Length)];
-
-                randomtemp = ramdomizeForEva(feelingID);
-                temp[2] = Feelings[randomtemp][Random.Range(0, Feelings[randomtemp].Length)];
-
-                    for (int i = 0; i < 5; i++)
-                    {
-                        swapLocalArray(temp, Random.Range(0, 3), Random.Range(0, 3));
-                    }
-
-                    return temp;
-                }
-            default:
-                break;
-        }
-        return null;
+		for (int i = 0; i < 5; i++)
+		{
+			swapLocalArray(temp, Random.Range(0, 3), Random.Range(0, 3));
+		}
+		return temp;
     }
 
 }
@@ -148,11 +95,17 @@ public class WorldsPool : MonoBehaviour {
 public struct Phrase
 {
     [SerializeField]
-    string phrase;
-    [SerializeField]
+    string shortVersion;
+	[SerializeField]
+	string phrase;
+	[SerializeField]
     Utility.Emotions feelingID;
 
-    public string GetPhrase()
+	public string GetAnswerPhrase()
+	{
+		return shortVersion;
+	}
+	public string GetPhrase()
     {
         return phrase;
     }

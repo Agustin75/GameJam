@@ -3,46 +3,44 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TextSpeed : MonoBehaviour {
+public class TextSpeed : MonoBehaviour
+{
+	[SerializeField]
+	float TimeBetweenLetters;
+	[SerializeField]
+	Text textToanimate;
+	[SerializeField]
+	string newScene;
 
-    [SerializeField]
-    float TimeBetweenLetters;
-    [SerializeField]
-    Text textToanimate;
-    //Text t;
+	string originaltext;
+	string textdisplay;
 
-    string originaltext;
-    string textdisplay;
 	// Use this for initialization
-	void Start () {
-       // textToanimate = GetComponent<Text>();
-        originaltext = textToanimate.text;
-        textToanimate.text = "";
+	void Start()
+	{
+		originaltext = textToanimate.text;
+		textToanimate.text = "";
 	}
 
-    public void Animate()
-    {
-        StartCoroutine(AnimateText());
-        
-    }
-    public IEnumerator AnimateText() {
-        for (int i = 0; i < originaltext.Length; i++)
-        {
-            textToanimate.text += originaltext[i];
-          
-        yield return new WaitForSeconds(TimeBetweenLetters);
+	public void Animate()
+	{
+		StartCoroutine(AnimateText());
+	}
 
+	public IEnumerator AnimateText()
+	{
+		for (int i = 0; i < originaltext.Length; i++)
+		{
+			textToanimate.text += originaltext[i];
 
-        }
+			yield return new WaitForSeconds(TimeBetweenLetters);
+		}
 
-        for (int i = 0; i < 3; i++)
-        {
-            yield return new WaitForSeconds(1f);
-        }
-        Utility.LoadSceneA("Pablo Scene");
+		for (int i = 0; i < 3; i++)
+		{
+			yield return new WaitForSeconds(1f);
+		}
 
-        
-    }
-	
-
+		Utility.LoadSceneA(newScene);
+	}
 }

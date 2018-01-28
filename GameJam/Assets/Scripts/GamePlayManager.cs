@@ -12,24 +12,22 @@ public class GamePlayManager : MonoBehaviour
 	public Button[] answerButtons;
 	public Text[] answerTexts;
 	public Text currentDayText;
+	public Text playerSpeech;
 	public Image scoreBar;
 	public Image requiredEmotionImage;
-	public int requiredScore, maxScore;
+	public Sprite[] emotionFaces;
 
 	// Private Members
-	// TODO: Change back to private (public for Debug)
-	public int currentScore, correctScore, wrongScore;
-	public int numAnswers;
-	public int numQuestions, currQuestion;
+	private int requiredScore, maxScore;
+	private int currentScore, correctScore, wrongScore;
+	private int numAnswers;
+	private int numQuestions, currQuestion;
+	private int currentDay;
 	private Utility.Emotions requiredEmotion;
    
 	private Phrase[] answers;
-	public int numDays;
-	public float waitTime;
-
-	private int currentDay;
+	private int numDays;
 	private bool playerAnswered;
-	private float timer;
 
     public Utility.Emotions GetCurrentEmotion()
     {
@@ -38,7 +36,6 @@ public class GamePlayManager : MonoBehaviour
     // Use this for initialization
     void Start()
 	{
-		timer = 0.0f;
 		playerAnswered = false;
 		currentScore = currQuestion = currentDay = 0;
 		requiredEmotion = (Utility.Emotions)Random.Range(0, System.Enum.GetValues(typeof(Utility.Emotions)).Length);
@@ -46,29 +43,9 @@ public class GamePlayManager : MonoBehaviour
 		numDays = PlayerPrefs.GetInt("NumDays");
 		maxScore = PlayerPrefs.GetInt("MaxScore");
 		requiredScore = PlayerPrefs.GetInt("RequiredScore");
-		numQuestions = PlayerPrefs.GetInt("NumQuestions" + currentDay);
-		numAnswers = PlayerPrefs.GetInt("NumAnswers" + currentDay);
-		correctScore = PlayerPrefs.GetInt("CorrectScore" + currentDay);
-		wrongScore = PlayerPrefs.GetInt("WrongScore" + currentDay);
 
-		currentDayText.text = "Day " + (currentDay + 1).ToString();
-		switch (requiredEmotion)
-		{
-			case Utility.Emotions.Happiness:
-				requiredEmotionImage.color = Color.yellow;
-				break;
-			case Utility.Emotions.Anger:
-				requiredEmotionImage.color = Color.red;
-				break;
-			case Utility.Emotions.Sadness:
-				requiredEmotionImage.color = Color.blue;
-				break;
-			case Utility.Emotions.Fear:
-				requiredEmotionImage.color = Color.black;
-				break;
-		}
+		ResetValues();
 
-		// TODO: REMOVE DEBUG CODE
 		ShowQuestion(true);
 	}
 
@@ -96,29 +73,7 @@ public class GamePlayManager : MonoBehaviour
 			}
 		}
 
-		currentDayText.text = "Day " + (currentDay + 1).ToString();
-
-		numQuestions = PlayerPrefs.GetInt("NumQuestions" + currentDay);
-		numAnswers = PlayerPrefs.GetInt("NumAnswers" + currentDay);
-		requiredEmotion = (Utility.Emotions)Random.Range(0, System.Enum.GetValues(typeof(Utility.Emotions)).Length);
-		correctScore = PlayerPrefs.GetInt("CorrectScore" + currentDay);
-		wrongScore = PlayerPrefs.GetInt("WrongScore" + currentDay);
-
-		switch (requiredEmotion)
-		{
-			case Utility.Emotions.Happiness:
-				requiredEmotionImage.color = Color.yellow;
-				break;
-			case Utility.Emotions.Anger:
-				requiredEmotionImage.color = Color.red;
-				break;
-			case Utility.Emotions.Sadness:
-				requiredEmotionImage.color = Color.blue;
-				break;
-			case Utility.Emotions.Fear:
-				requiredEmotionImage.color = Color.black;
-				break;
-		}
+		ResetValues();
 
 		return true;
 	}
@@ -128,12 +83,11 @@ public class GamePlayManager : MonoBehaviour
 	{
 		if (playerAnswered)
 		{
-			timer += Time.deltaTime;
-			if (timer >= waitTime)
+			if(Input.GetMouseButtonDown(0))
 			{
-				timer = 0.0f;
 				playerAnswered = false;
 				NextQuestion();
+				playerSpeech.gameObject.SetActive(false);
 			}
 		}
 	}
@@ -146,7 +100,9 @@ public class GamePlayManager : MonoBehaviour
 		{
 			answerButtons[i].gameObject.SetActive(show);
 			if (show)
-				answerTexts[i].text = answers[i].GetPhrase();
+			{
+				answerTexts[i].text = answers[i].GetAnswerPhrase();
+			}
 		}
 	}
 
@@ -174,9 +130,10 @@ public class GamePlayManager : MonoBehaviour
 
 		playerAnswered = true;
 
+		playerSpeech.text = answers[answer].GetPhrase();
+		playerSpeech.gameObject.SetActive(true);
+
 		ShowQuestion(false);
-		// TODO: REMOVE DEBUG CODE
-		//NextQuestion();
 	}
 
 	// Function that handles moving on to the next question. Call after showing audience feedback
@@ -190,5 +147,33 @@ public class GamePlayManager : MonoBehaviour
 		}
 
 		ShowQuestion(true);
+	}
+
+	public void ResetValues()
+	{
+		currentDayText.text = "Day " + (currentDay + 1).ToString();
+
+		numQuestions = PlayerPrefs.GetInt("NumQuestions" + currentDay);
+		numAnswers = PlayerPrefs.GetInt("NumAnswers" + currentDay);
+		requiredEmotion = (Utility.Emotions)Random.Range(0, System.Enum.GetValues(typeof(Utility.Emotions)).Length);
+		correctScore = PlayerPrefs.GetInt("CorrectScore" + currentDay);
+		wrongScore = PlayerPrefs.GetInt("WrongScore" + currentDay);
+
+		requiredEmotionImage.sprite = emotionFaces[(int)requiredEmotion];
+		switch (requiredEmotion)
+		{
+			case Utility.Emotions.Happiness:
+				requiredEmotionImage.color = Color.yellow;
+				break;
+			case Utility.Emotions.Anger:
+				requiredEmotionImage.color = Color.red;
+				break;
+			case Utility.Emotions.Sadness:
+				requiredEmotionImage.color = Color.blue;
+				break;
+			case Utility.Emotions.Fear:
+				requiredEmotionImage.color = Color.gray;
+				break;
+		}
 	}
 }
