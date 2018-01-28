@@ -2307,7 +2307,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1602430718}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 445.5, y: -219.7, z: 0}
+  m_LocalPosition: {x: 445.5, y: -194.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 584194379}
@@ -2315,8 +2315,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 445.5, y: -24}
-  m_SizeDelta: {x: 205.9, y: 146.6}
+  m_AnchoredPosition: {x: 445.5, y: 1}
+  m_SizeDelta: {x: 205.9, y: 233.4}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1602430720
 MonoBehaviour:
@@ -2350,7 +2350,21 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "AUDIO ENGINEER\nBrandon Jones\r\n\nWRITER\nMatthew Schnell"
+  m_Text: 'WRITER
+
+    Matthew Schnell
+
+
+    ASSET STORE ITEMS
+
+    Studio New Punch
+
+    Fire95
+
+    ALlyerEdon
+
+
+'
 --- !u!222 &1602430721
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2745,7 +2759,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1934038338}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 52.8, y: -219.7, z: 0}
+  m_LocalPosition: {x: 52.8, y: -196.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 584194379}
@@ -2753,8 +2767,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 52.8, y: -24}
-  m_SizeDelta: {x: 205.9, y: 146.6}
+  m_AnchoredPosition: {x: 52.8, y: -1}
+  m_SizeDelta: {x: 205.9, y: 238.9}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1934038340
 MonoBehaviour:
@@ -2788,7 +2802,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "PROGRAMMERS\nAgustin Conti\r\nPablo Bernal\r\n\nARTIST\nZak Loiselle\r"
+  m_Text: "PROGRAMMERS\nAgustin Conti\r\nPablo Bernal\r\n\nARTIST\nZak Loiselle\n\nAUDIO
+    ENGINEER\nBrandon Jones\r"
 --- !u!222 &1934038341
 CanvasRenderer:
   m_ObjectHideFlags: 0
