@@ -22,7 +22,7 @@ public class ButtonHoverSound : MonoBehaviour
 
     }
 
-    void PlayUISound(string Sound)
+   public void PlayUISound(string Sound)
     {
         HoverSound = FMODUnity.RuntimeManager.CreateInstance(HoverSoundEvent);
         HoverSound.start();
