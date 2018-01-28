@@ -22,6 +22,7 @@ public class GamePlayManager : MonoBehaviour
 	public int numAnswers;
 	public int numQuestions, currQuestion;
 	private Utility.Emotions requiredEmotion;
+   
 	private Phrase[] answers;
 	public int numDays;
 	public float waitTime;
@@ -30,8 +31,12 @@ public class GamePlayManager : MonoBehaviour
 	private bool playerAnswered;
 	private float timer;
 
-	// Use this for initialization
-	void Start()
+    public Utility.Emotions GetCurrentEmotion()
+    {
+        return requiredEmotion;
+    }
+    // Use this for initialization
+    void Start()
 	{
 		timer = 0.0f;
 		playerAnswered = false;

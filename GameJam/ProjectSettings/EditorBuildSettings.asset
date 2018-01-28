@@ -17,3 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Agustin Scene.unity
     guid: 413f156a698add743885a3367452481b
+  - enabled: 1
+    path: Assets/Scenes/Defeat Scene.unity
+    guid: 8603213c717d4cf45a0438dca8eb8663
