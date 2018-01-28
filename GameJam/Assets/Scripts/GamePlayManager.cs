@@ -30,6 +30,9 @@ public class GamePlayManager : MonoBehaviour
 	private int numDays;
 	private bool playerAnswered;
 
+	[SerializeField]
+	private string winScene, loseScene;
+
     public Utility.Emotions GetCurrentEmotion()
     {
         return requiredEmotion;
@@ -72,17 +75,15 @@ public class GamePlayManager : MonoBehaviour
 			if (currentScore >= requiredScore)
 			{
 				// Game Won
-				Debug.Log("Win");
-				ShowQuestion(false);
-				return false;
+				Utility.LoadSceneA(winScene);
 			}
 			else
 			{
 				// Game Lost
-				Debug.Log("Loss");
-				ShowQuestion(false);
-				return false;
+				Utility.LoadSceneA(loseScene);
 			}
+			ShowQuestion(false);
+			return false;
 		}
 
 		ResetValues();
