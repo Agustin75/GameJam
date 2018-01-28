@@ -8,8 +8,8 @@ public class ScrollViewScript : MonoBehaviour {
     Scrollbar scr;
     public void ChangeObjectState( bool activeness)
     {
-        scr.value = 1;
+        //scr.value = 1;
         gameObject.SetActive(activeness);
-        scr.value = 1;
+        //scr.value = 1;
     }
 }

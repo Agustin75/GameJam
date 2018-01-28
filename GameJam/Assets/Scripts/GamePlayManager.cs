@@ -20,6 +20,8 @@ public class GamePlayManager : MonoBehaviour
     public Slider SliderScoreTotal;
     public GameObject FeedbackText;
     public GameObject TheNextDayImage;
+    public GameObject PersonPrefab;
+    List<GameObject> People = new List<GameObject>();
 	// Private Members
 	private int requiredScore, maxScore;
 	private int currentScore, correctScore, wrongScore;
@@ -53,6 +55,17 @@ public class GamePlayManager : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
+        for (int i = 0; i < 20; i++)
+        {
+            float x = (Random.Range(-9, 9));
+            x /= 10f;
+            float z = (Random.Range(-5, 5));
+
+           z /= 10f;
+            GameObject temp = Instantiate(PersonPrefab);
+            temp.transform.position = new Vector3(x, 0.1f, z);
+            People.Add(temp);
+        }
 		playerAnswered = false;
 		currentScore = currQuestion = currentDay = 0;
 		requiredEmotion = (Utility.Emotions)Random.Range(0, System.Enum.GetValues(typeof(Utility.Emotions)).Length);
@@ -131,6 +144,11 @@ public class GamePlayManager : MonoBehaviour
 		{
             FeedbackText.GetComponent<Text>().text = "Good Choice!";
             FeedbackText.GetComponent<Animator>().SetTrigger("QuestionFired");
+            
+            for (int i = 0; i < People.Count; i++)
+            {
+                People[i].GetComponentInChildren<Animator>().SetTrigger("GoodPhrase");
+            }
 			// Increase their score
 			currentScore += correctScore;
 		}
@@ -138,6 +156,10 @@ public class GamePlayManager : MonoBehaviour
 		{
             FeedbackText.GetComponent<Text>().text = "That didn't sound good...";
             FeedbackText.GetComponent<Animator>().SetTrigger("QuestionFired");
+            for (int i = 0; i < People.Count; i++)
+            {
+                People[i].GetComponentInChildren<Animator>().SetTrigger("BadPhrase");
+            }
             // Decrease their score if it is higher than 0
             if (currentScore > 0)
 				currentScore -= wrongScore;
