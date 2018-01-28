@@ -20,6 +20,7 @@ public class GamePlayManager : MonoBehaviour
     public Slider SliderScoreTotal;
     public GameObject FeedbackText;
     public GameObject TheNextDayImage;
+    public AudioClip[] soundsCorrectWrong;
     public GameObject PersonPrefab;
     List<GameObject> People = new List<GameObject>();
 	// Private Members
@@ -55,7 +56,7 @@ public class GamePlayManager : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
-        for (int i = 0; i < 20; i++)
+        for (int i = 0; i < 50; i++)
         {
             float x = (Random.Range(-9, 9));
             x /= 10f;
@@ -144,7 +145,8 @@ public class GamePlayManager : MonoBehaviour
 		{
             FeedbackText.GetComponent<Text>().text = "Good Choice!";
             FeedbackText.GetComponent<Animator>().SetTrigger("QuestionFired");
-            
+            GetComponent<AudioSource>().clip = soundsCorrectWrong[0];
+            GetComponent<AudioSource>().Play();
             for (int i = 0; i < People.Count; i++)
             {
                 People[i].GetComponentInChildren<Animator>().SetTrigger("GoodPhrase");
@@ -156,6 +158,8 @@ public class GamePlayManager : MonoBehaviour
 		{
             FeedbackText.GetComponent<Text>().text = "That didn't sound good...";
             FeedbackText.GetComponent<Animator>().SetTrigger("QuestionFired");
+            GetComponent<AudioSource>().clip = soundsCorrectWrong[1];
+            GetComponent<AudioSource>().Play();
             for (int i = 0; i < People.Count; i++)
             {
                 People[i].GetComponentInChildren<Animator>().SetTrigger("BadPhrase");
