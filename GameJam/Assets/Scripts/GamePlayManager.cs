@@ -12,6 +12,7 @@ public class GamePlayManager : MonoBehaviour
 	public Button[] answerButtons;
 	public Text[] answerTexts;
 	public Text currentDayText;
+	public Image playerSpeechDialougeBox;
 	public Text playerSpeech;
 	public Image scoreBar;
 	public Image requiredEmotionImage;
@@ -33,16 +34,19 @@ public class GamePlayManager : MonoBehaviour
     {
         return requiredEmotion;
     }
-    public int getCurrentScore()
-    {
-        return currentScore;
-    }
-    public int getMaxScore()
-    {
-        return maxScore;
-    }
-    // Use this for initialization
-    void Start()
+
+	public int GetCurrentScore()
+	{
+		return currentScore;
+	}
+
+	public int GetMaxScore()
+	{
+		return maxScore;
+	}
+
+	// Use this for initialization
+	void Start()
 	{
 		playerAnswered = false;
 		currentScore = currQuestion = currentDay = 0;
@@ -95,7 +99,7 @@ public class GamePlayManager : MonoBehaviour
 			{
 				playerAnswered = false;
 				NextQuestion();
-				playerSpeech.gameObject.SetActive(false);
+				playerSpeechDialougeBox.gameObject.SetActive(false);
 			}
 		}
 	}
@@ -139,7 +143,7 @@ public class GamePlayManager : MonoBehaviour
 		playerAnswered = true;
 
 		playerSpeech.text = answers[answer].GetPhrase();
-		playerSpeech.gameObject.SetActive(true);
+		playerSpeechDialougeBox.gameObject.SetActive(true);
 
 		ShowQuestion(false);
 	}
